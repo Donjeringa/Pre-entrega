@@ -1,0 +1,1 @@
+Es una pagina simple simulando compras de productos con cards, navbar, reseñas y en el footer un formulario
