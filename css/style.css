@@ -1,76 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    transition: 0.4s;
-  }
-  
 body {
-    font-family:Bebas Neue;
-    background-color: rgb(255, 255, 255);
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
 header {
-    font-family: Doto;
-    text-align: center;
-    background-color: rgb(69, 69, 142);
-    color: rgb(255, 255, 255);
-  }
+  font-family: Doto;
+  text-align: center;
+  background-color: rgb(69, 69, 142);
+  color: rgb(255, 255, 255);
+}
 nav{
-    padding: 3px;
-    background-color: rgb(81, 81, 165);
-    color: rgb(255, 255, 255);
+  padding: 3px;
+  background-color: rgb(81, 81, 165);
+  color: rgb(255, 255, 255);
 }
-main{
-  background-color: rgb(174, 170, 201);
-  padding: 100px;
-  color: rgb(0, 0, 0);
-}
-footer{
-    background-color: rgb(85, 146, 131);
-    padding: 72px;
-    color: rgb(0, 0, 0);
-}
-.navegacion{
-  width: 100px;
-  height: 25px;
-  color:rgb(19, 7, 188);
-  background-color: bisque;
-  text-align: center;
-  border: 3px solid rgb(31, 2, 157);
-}
-.contenedor-navegacion{
+nav ul {
+  list-style-type: none;
   display: flex;
   justify-content: space-around;
 }
-.contenedor-cards{
-  display: flex;
-  justify-content: space-around;
+
+nav ul li a {
+  color: rgb(69, 69, 142);
+  text-decoration: none;
 }
-.card{
-  width: 20%;
-  background-color: aqua;
-  text-align: center;
-  justify-items: center;
-  border-radius: 10px;
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
   padding: 10px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
+  flex: 1 1 calc(33.333% - 10px);
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card-img-top{
-  height: auto;
-  width: auto;
+.card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.img-titulo{
-  height: 200px;
-  width: 100%;
+
+.card .descripcion {
+  padding-top: 10px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
 }
-@media(min-width:768px) and (max-width:2000px){
-  footer{
-    background-color: rgb(85, 0, 131);
-    padding: 72px;
-    color: rgb(255, 255, 255);
+.card .agregarCarrito {
+  background-color: rgb(75, 0, 130);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  display: block;
 }
-  .card-img-top{
-    display: flex;
-  }
+.card:hover {
+  transform: scale(1);
+  box-shadow: 0 8px 16px rgb(0, 0, 0);
 }
 .contenedor-reseñas{
   padding: 20px;
@@ -84,4 +92,86 @@ footer{
   height: 100%;
   background-color: rgb(166, 95, 205);
   color: rgb(255, 255, 255);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+form input, form textarea, form button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+form button {
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: rgb(122, 72, 150);
+}
+#carrito {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+}
+@media(min-width:768px) and (max-width:2000px){
+  footer{
+  background-color: rgb(85, 146, 131);
+  padding: 72px;
+  color: rgb(255, 255, 255);
+}
+  .card-img-top{
+  display: flex;
+  }
+  .card {
+      flex: 1 1 calc(50% - 10px);
+  }
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+.navegacion{
+  width: 100px;
+  height: 25px;
+  color:rgb(19, 7, 188);
+  background-color: bisque;
+  text-align: center;
+  border: 3px solid rgb(31, 2, 157);
+}
+.contenedor-reseñas{
+  padding: 20px;
+  display: grid;
+  grid-template-columns:repeat(4,auto);
+  justify-items: center;
+  grid-gap: 20px;
+}
+.reseña{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(166, 95, 205);
+  color: rgb(255, 255, 255);
+}
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.navbar-brand{
+  margin-right: auto;
+}
+.navbar-nav .nav-link:hover {
+  color: #FFFF;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+footer{
+  background-color: rgb(85, 0, 131);
+  padding: 72px;
+  color: rgb(0, 0, 0);
 }
